@@ -1,0 +1,24 @@
+Table of Contents:
+
+FUNDAMENTALS (must know and be comfortable with, not an exhaustive list)
+  data_structures:
+    |linked_lists|
+    |trees_tries_&_graphs|
+    |stacks_&_queues|
+    |heaps|
+    |vectors/arrayLists|
+    |hash_tables|
+  algorithms:
+    |breadth_first_search|
+    |depth_first_search|
+    |binary_search|
+    |merge_sort|
+    |quick_sort|
+  concepts:
+    |bit_manipulation|
+    |memory:stack_vs_heap|
+    |recursion|
+    |dynamic_programming|
+    |big_O_time_&_space_complexity|
+
+NOTE: need to understand these topics, how to use and implement them and the space / time complexity

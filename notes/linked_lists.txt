@@ -1,0 +1,28 @@
+*linked_lists*
+|linked_list_notes|
+|linked_list_implementation|
+
+*linked_list_notes*
+A linked list is comprised of node, each node is essentially a separate object. Each node contains a value and a link to the next node. Where an entire
+array must be moved to a new space in memory when full, a linked list doest not have to exist in consecutive chunks of memory. The link to the next
+node is a pointed to a new space in memory (which can be anywhere) ∴ they are easily extendable.
+
+One issue with linked lists is that the look up time is longer than arrays. With linked list you must start at the beginning and traverse to the point
+you need. With an array you can calculate where you need to land because the chunks of memory are uniform and consecutive. Linked lists also take up
+more space as they need space for the pointer as well as the value.
+
+*linked_lists_types* (may not be exhaustive)
+singly_linked_lists
+  one reference to the next node
+doubly_linked_lists
+  two references, one to the next node, another to the previous
+circular_linked_lists
+  where the last node points back to the first node (can be single / double)
+
+*linked_list_implementation*
+
+#include <stdio.h>
+
+main() {
+    printf("\nhello world\n");
+}
