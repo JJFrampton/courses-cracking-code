@@ -1,5 +1,6 @@
 *linked_lists*
 |linked_list_notes|
+|linked_lists_types|
 |linked_list_implementation|
 
 *linked_list_notes*
