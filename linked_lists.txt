@@ -18,11 +18,3 @@ doubly_linked_lists
   two references, one to the next node, another to the previous
 circular_linked_lists
   where the last node points back to the first node (can be single / double)
-
-*linked_list_implementation*
-
-#include <stdio.h>
-
-main() {
-    printf("\nhello world\n");
-}
