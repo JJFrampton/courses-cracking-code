@@ -1,0 +1,31 @@
+*selection_sort*
+
+# takes an array and sorts it
+#   searches through the array to find highest value
+#   inserts at the end
+
+def selection_sort(a)
+    n = a.length - 1
+    while n > 0
+        i = 0
+        max = n # this will hold the index of the max
+        while i < n
+            # find max
+            if a[i] > a[max] then max = i end
+            i += 1
+        end
+        # swap a[max] with a[n]
+        temp = a[n]
+        a[n] = a[max]
+        a[max] = temp
+
+        n -= 1
+    end
+    print a
+    puts
+end
+
+a = [5,2,6,8,1,9]
+print a
+puts
+selection_sort(a)
