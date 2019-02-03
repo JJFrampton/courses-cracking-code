@@ -1,0 +1,31 @@
+=begin
+*bubble_sort*
+=end
+
+def swap(a, i)
+    temp = a[i]
+    a[i] = a[i+1]
+    a[i+1] = temp
+end
+
+def bubble_sort(a)
+    print "#{a}\n"
+    n = a.length - 1
+    while true
+        i = 0
+        swap = 0
+        while i < n
+            if a[i] > a[i+1]
+                swap(a,i) if a[i] > a[i+1]
+                swap += 1
+                print "#{a}\n"
+            end
+            i += 1
+        end
+        break if swap == 0
+    end
+    return 1
+end
+
+a = [9,2,6,3]
+bubble_sort(a)

@@ -1,4 +1,6 @@
+=begin
 *selection_sort*
+=end
 
 # takes an array and sorts it
 #   searches through the array to find highest value
