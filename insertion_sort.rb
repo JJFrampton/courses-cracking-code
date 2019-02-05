@@ -2,31 +2,6 @@
 *insertion_sort*
 =end
 
-#def shift(a, i, temp)
-#  j = i-1
-#  while j >= 0 do
-#    print "\n#{a[j]} greater that #{temp}"
-#    if a[j] > temp 
-#      a[j+1] = a[j]
-#      print "\n#{a}"
-#    end
-#    j -= 1
-#  end
-#  print "\n#{a}"
-#  return j+1
-#end
-#
-#def insertion_sort(a)
-#    n = a.length - 1
-#    i = 1
-#    while i <= n
-#      temp = a[i]
-#      ins = shift(a, i, temp)
-#      a[ins+1] = temp
-#      i += 1
-#    end
-#end
-
 def insertion_sort(a)
   i = 1
   while i < a.length
