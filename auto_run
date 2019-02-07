@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# inotifywait -q -m -e close_write $1 |
+# while read -r filename event; do
+#   ./$1
+# done
+
+inotifywait -e close_write,moved_to,create -m . |
+while read -r directory events filename; do
+  if [ "$filename" = "myfile.py" ]; then
+    ./merge_sort.rb
+  fi
+done

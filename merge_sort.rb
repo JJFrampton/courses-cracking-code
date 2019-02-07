@@ -8,6 +8,10 @@ def merge(l, r, a)
   nr = r.length
   i,j,k = 0,0,0
   while i < nl && j < nr
+    print i 
+    print j
+    print l[i]
+    print r[i]
     if l[i] <= r[i]
       a[k] = l[i]
       i += 1
@@ -35,19 +39,15 @@ def merge_sort(a)
   return if n < 2 # break out of rcursion
   print "\nthis is n : #{n}\n"
   mid = n / 2
+  # creating left and right sub lists
   left = a[0,mid]
   right = a[mid..-1]
-  # creating left and right sub lists
-  for i in 0..mid-1
-    left[i] = a[i]
-  end
-  for i in mid..n-1
-    right[i] = a[i]
-  end
   print left
   print right
   # recurse into left then right
+  print "\n left"
   merge_sort(left)
+  print "\n right"
   merge_sort(right)
   merge(left, right, a)
 end
