@@ -5,15 +5,27 @@
 
 require './binary_tree.rb'
 
-def bfs(node)
-  puts node.value
-  if node.left != nil
-    dfs(node.left)
+# NOTE :
+
+def wrapper(node)
+  queue = [node]
+  bfs(queue)
+end
+def bfs(queue)
+  # return if queue.length == 0 # recursive
+  while queue.length != 0
+    node = queue[0]
+    puts node.value
+    if node.left != nil
+      queue.append(node.left)
+    end
+    if node.right != nil
+      queue.append(node.right)
+    end
+    queue.shift
   end
-  if node.right != nil
-    dfs(node.right)
-  end
+  # bfs(queue) # recursive
 end
 
 print "breadth First Search Print Out:\n"
-bfs(@a)
+wrapper(@a)
