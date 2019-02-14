@@ -1,56 +1,55 @@
-#!/usr/bin/env ruby
 =begin
 *merge_sort*
 =end
 
-def merge(l, r, a)
-  nl = l.length
-  nr = r.length
+def merge(left, right, array)
+  nLeft = left.length
+  nRight = right.length
   i,j,k = 0,0,0
-  while i < nl && j < nr
-    print i 
-    print j
-    print l[i]
-    print r[i]
-    if l[i] <= r[i]
-      a[k] = l[i]
+  while (i < nLeft && j < nRight)
+    if (left[i] <= right[j])
+      array[k] = left[i]
+      k += 1
       i += 1
     else
-      a[k] = r[j]
+      array[k] = right[j]
       j += 1
     end
     k += 1
   end
-  # only one of these while loops will run to cover left overs
-  while i < nl
-    a[k] = l[i]
-    i = i+= 1
+  while (i < nLeft)
+    array[k] = left[i]
+    i += 1
     k += 1
   end
-  while
-    a[k] = r[i]
-    i = i+= 1
+  while (j < nRight)
+    array[k] = right[j]
+    j += 1
     k += 1
   end
 end
-
-def merge_sort(a)
-  n = a.length
-  return if n < 2 # break out of rcursion
-  print "\nthis is n : #{n}\n"
-  mid = n / 2
-  # creating left and right sub lists
-  left = a[0,mid]
-  right = a[mid..-1]
-  print left
-  print right
-  # recurse into left then right
-  print "\n left"
-  merge_sort(left)
-  print "\n right"
-  merge_sort(right)
-  merge(left, right, a)
+ 
+def mergeSort(array)
+  n = array.length
+  if n < 2 then return end
+  mid = n/2
+  left = array[0,mid]
+  right = array[mid..-1]
+  print "\nmid #{mid}"
+  print "\nleft #{left}"
+  print "\nright #{right}"
+  for i in 0..mid-1
+    left[i] = array[i]
+  end
+  for i in mid..n-1
+    right[i-mid] = array[i]
+  end
+  mergeSort(left)
+  mergeSort(right)
+  merge(left,right,array)
 end
 
-a = [1,4,2,3,5,6,0,9]
-merge_sort(a)
+array = [2,4,1,6,8,5,3,7]
+print = "\n#{array}"
+mergeSort(array)
+print = "\n#{array}"
