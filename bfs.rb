@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 =begin
-*dfs*
+*bfs*
 =end
 
 require './binary_tree.rb'
 
-def dfs(node)
+def bfs(node)
   puts node.value
   if node.left != nil
     dfs(node.left)
@@ -15,5 +15,5 @@ def dfs(node)
   end
 end
 
-print "Depth First Search Print Out:\n"
-dfs(@a)
+print "breadth First Search Print Out:\n"
+bfs(@a)
