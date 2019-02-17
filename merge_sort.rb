@@ -1,55 +1,47 @@
+#!/usr/bin/env ruby
 =begin
 *merge_sort*
 =end
 
-def merge(left, right, array)
-  nLeft = left.length
-  nRight = right.length
-  i,j,k = 0,0,0
-  while (i < nLeft && j < nRight)
-    if (left[i] <= right[j])
-      array[k] = left[i]
-      k += 1
-      i += 1
-    else
-      array[k] = right[j]
-      j += 1
-    end
-    k += 1
-  end
-  while (i < nLeft)
-    array[k] = left[i]
-    i += 1
-    k += 1
-  end
-  while (j < nRight)
-    array[k] = right[j]
-    j += 1
-    k += 1
-  end
-end
- 
-def mergeSort(array)
-  n = array.length
-  if n < 2 then return end
-  mid = n/2
-  left = array[0,mid]
-  right = array[mid..-1]
-  print "\nmid #{mid}"
-  print "\nleft #{left}"
-  print "\nright #{right}"
-  for i in 0..mid-1
-    left[i] = array[i]
-  end
-  for i in mid..n-1
-    right[i-mid] = array[i]
-  end
-  mergeSort(left)
-  mergeSort(right)
-  merge(left,right,array)
+def split(arr)
+  print arr
+  # recursively split the array into smaller arrays
+  n = arr.length
+  return arr unless n > 1
+  print "didnt return  \n"
+  mid = n / 2
+  left = arr[0..mid-1]
+  right = arr[mid..-1]
+  # split(left)
+  # split(right)
+  # merge the arrays on the way out of recursion
+  # return merge(left, right)
+  return merge(split(left), split(right))
 end
 
-array = [2,4,1,6,8,5,3,7]
-print = "\n#{array}"
-mergeSort(array)
-print = "\n#{array}"
+def merge(left, right)
+  print " left and right : #{left} #{right}"
+  result = []
+  left_i = 0
+  right_i = 0
+  # iterate through both arrays, appending the lower values first
+  while left_i < left.length && right_i < right.length
+    if left[left_i] < right[right_i]
+      result.append(left[left_i])
+      left_i += 1
+    else
+      result.append(right[right_i])
+      right_i += 1
+    end
+    print "result : #{result}\n"
+  end
+  # concat the end of the longer array
+  result.concat(right[right_i..-1]) if left_i >= left.length
+  result.concat(left[left_i..-1]) if right_i >= right.length
+  print "result : #{result}\n"
+  return result
+end
+
+
+a = [5,8,3,6,4]
+puts split(a)
